@@ -19,7 +19,7 @@ Designed to help you stay productive using the Pomodoro technique.
 
 ## 📄 License
 
-[MIT License](./LICENCE)
+[MIT License](./LICENSE)
 
 ## 💡 Acknowledgment
 
