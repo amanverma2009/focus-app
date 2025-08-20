@@ -4,6 +4,7 @@ A simple, distraction-free focus timer built with **HTML, Tailwind CSS, and Java
 Designed to help you stay productive using the Pomodoro technique.
 
 ## 🚀 Features
+
 - Start, pause, and reset timer
 - Customizable focus & break durations
 - Minimal and responsive UI
@@ -11,7 +12,8 @@ Designed to help you stay productive using the Pomodoro technique.
 - Runs entirely in the browser (no backend needed)
 
 ## 🛠️ Tech Stack
-- **HTML** 
+
+- **HTML**
 - **Tailwind CSS**  
 - **JavaScript**
 

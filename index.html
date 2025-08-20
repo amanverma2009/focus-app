@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus Timer</title>
+  <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+  <div class="text-center space-y-6">
+    <h1 class="text-3xl font-bold">Focus Timer</h1>
+    <p class="text-lg">Stay focused with this simple timer</p>
+    <div id="timer" class="text-6xl font-mono">25:00</div>
+
+    <div class="flex justify-center space-x-4">
+      <button id="start" class="px-4 py-2 bg-green-600 rounded-lg shadow hover:bg-green-500">Start</button>
+      <button id="pause" class="px-4 py-2 bg-yellow-600 rounded-lg shadow hover:bg-yellow-500">Pause</button>
+      <button id="reset" class="px-4 py-2 bg-red-600 rounded-lg shadow hover:bg-red-500">Reset</button>
+    </div>
+
+    <div class="w-64 h-4 bg-gray-700 rounded-full overflow-hidden mx-auto">
+      <div id="progress" class="h-4 bg-blue-500 w-0"></div>
+    </div>
+  </div>
+
+  <script>
+    let timerDisplay = document.getElementById("timer");
+    let progressBar = document.getElementById("progress");
+    let startBtn = document.getElementById("start");
+    let pauseBtn = document.getElementById("pause");
+    let resetBtn = document.getElementById("reset");
+
+    let duration = 25 * 60;
+    let timeLeft = duration;
+    let interval = null;
+
+    function updateDisplay() {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      timerDisplay.textContent =
+        `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+      let progress = ((duration - timeLeft) / duration) * 100;
+      progressBar.style.width = progress + "%";
+    }
+
+    function startTimer() {
+      if (interval) return;
+      interval = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--;
+          updateDisplay();
+        } else {
+          clearInterval(interval);
+          interval = null;
+          alert("Session Complete 🎉");
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(interval);
+      interval = null;
+    }
+
+    function resetTimer() {
+      clearInterval(interval);
+      interval = null;
+      timeLeft = duration;
+      updateDisplay();
+      progressBar.style.width = "0%";
+    }
+
+    startBtn.addEventListener("click", startTimer);
+    pauseBtn.addEventListener("click", pauseTimer);
+    resetBtn.addEventListener("click", resetTimer);
+
+    updateDisplay();
+  </script>
+</body>
+</html>
