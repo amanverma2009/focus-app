@@ -4,30 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focus Timer</title>
-    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
   </head>
   <body
     class="bg-[url(https://c4.wallpaperflare.com/wallpaper/975/563/734/pier-sky-reflection-water-wallpaper-preview.jpg)] bg-cover bg-center flex items-center justify-center h-screen font-[poppins] text-white bg-white/10 backdrop-blur-sm border border-white/20"
   >
+    <div
+      class="bg-white/10 rounded-2xl p-6 gap-1 h-100 w-100 text-wrap fixed left-10"
+    >
+      <h1 class="text-4xl font-bold text-center mb-3">Background Music</h1>
+      <div>
+        <h2 class="text-2xl font-medium mb-2">Upload Songs</h2>
+        <h2 class="text-sm mb-3">Just Upload and Start the Timer!</h2>
+        <input
+          type="file"
+          id="audioUpload"
+          accept="audio/*"
+          class="text-sm p-2 rounded-lg bg-white/20 text-white"
+        />
+        <audio id="bgMusic" loop></audio>
+      </div>
+    </div>
     <div class="text-center space-y-6">
       <h1 class="text-7xl font-bold session-mode">Focus Timer</h1>
       <p class="text-lg">Stay focused with this simple timer</p>
 
       <div class="flex bg-white/10 rounded-2xl p-1 mb-8 gap-1 w-100 mx-auto">
         <button
-          class="mode-btn flex-1 px-4 py-3 text-white rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
+          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
           data-mode="focus"
         >
           Focus
         </button>
         <button
-          class="mode-btn flex-1 px-4 py-3 text-white rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
+          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
           data-mode="break"
         >
           Break
         </button>
         <button
-          class="mode-btn flex-1 px-4 py-3 text-white rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
+          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
           data-mode="long"
         >
           Long Break
