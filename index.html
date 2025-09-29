@@ -21,7 +21,7 @@
           type="file"
           id="audioUpload"
           accept="audio/*"
-          class="text-sm p-2 rounded-lg bg-white/20 text-white"
+          class="text-sm p-2 w-full h-20 rounded-lg bg-white/20 border border-white/30 hover:cursor-pointer"
         />
         <audio id="bgMusic" loop></audio>
       </div>
@@ -32,26 +32,26 @@
 
       <div class="flex bg-white/10 rounded-2xl p-1 mb-8 gap-1 w-100 mx-auto">
         <button
-          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
+          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer border border-white/30"
           data-mode="focus"
         >
           Focus
         </button>
         <button
-          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
+          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer border border-white/30"
           data-mode="break"
         >
           Break
         </button>
         <button
-          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer"
+          class="mode-btn flex-1 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-300 ease-in-out cursor-pointer border border-white/30"
           data-mode="long"
         >
           Long Break
         </button>
       </div>
 
-      <div class="relative w-80 h-40 mx-auto flex items-center justify-center">
+      <div class="relative w-100 h-50 mx-auto flex items-center justify-center">
         <svg
           class="absolute top-0 left-0"
           width="100%"
@@ -77,7 +77,7 @@
           />
         </svg>
         <div class="absolute inset-0 flex items-center justify-center">
-          <div id="timer" class="text-4xl font-mono"></div>
+          <div id="timer" class="text-5xl font-medium font-mono"></div>
         </div>
       </div>
 
